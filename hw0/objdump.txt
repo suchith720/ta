@@ -1,0 +1,6 @@
+1.elf64-x86-64 format which stands for Executable and linkable format, this helps in linking and loading the process.
+i384:x86-64 is the architecture, or the instruction set used.
+2. Segments in the code: PHDR,INTERP,LOAD,DYNAMIC,NOTE,EH_FRAME,STACK,RELRO.
+3. main is present .text section and address 000000000040077d same as gdb.
+4.No stack or heap segment as that is done by OS not required for linking and loading process. ELF task is to link external and missing libraries and map object file to memory.
+

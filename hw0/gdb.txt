@@ -1,0 +1,6 @@
+argv is (char **) - a pointer to a pointer storing the starting address of the location of the executable.
+argv[0] points to string denoting the location of the executable.
+Address of the main function : 0x4007d
+info stack: give the frames present the stack.
+info frame: rip probably the program counter, ibp the base pointer to the locals etc.
+info register: contents of the CPU registers.

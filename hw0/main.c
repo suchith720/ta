@@ -3,8 +3,19 @@
 
 int main() {
     struct rlimit lim;
-    printf("stack size: %ld\n", 0L);
-    printf("process limit: %ld\n", 0L);
-    printf("max file descriptors: %ld\n", 0L);
+    int flag;
+    flag =  getrlimit(RLIMIT_STACK,&lim);
+
+    if( flag == 0) printf("stack size: %ld\n", lim.rlim_cur);
+    else fprintf(stderr,"Error in function\n");
+
+    flag =  getrlimit(RLIMIT_NPROC,&lim);
+    if( flag == 0 ) printf("process limit: %ld\n", lim.rlim_cur);
+    else fprintf(stderr,"Error in function\n");
+    
+    flag =  getrlimit(RLIMIT_NOFILE,&lim);
+    if( flag == 0) printf("max file descriptors: %ld\n", lim.rlim_cur);
+    else fprintf(stderr,"Error in function\n");
+
     return 0;
 }
